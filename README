@@ -1,1 +1,3 @@
-Sentiment Analysis in Twitter to determine the nature of the Tweets. 
+Sentiment Analysis in Twitter to determine the nature of the Tweets.
+Step 1: Add imports from the python liraries tweepy and textblob which will be used to fetch and parse data from Twitter
+ 
