@@ -31,3 +31,34 @@ class TwitterClient(object):
         else :
             return 'negative'
 
+    def get_tweets(self, query, count = 10):
+    
+        tweets = []
+    # call the twitter api to fetch the tweets and parse them
+        tweets_fetched = self.api.search(query =query, count = count )
+
+        for tweet in fetched_tweets: 
+                # empty dictionary to store required params of a tweet 
+                tweets_parsed = {} 
+  
+                # saving text of tweet 
+                tweets_parsed['text'] = tweet.text 
+                # saving sentiment of tweet 
+                tweets_parsed['sentiment'] = self.get_tweet_sentiment(tweet.text) 
+  
+                # appending parsed tweet to tweets list 
+                if tweet.retweet_count > 0: 
+                    # if tweet has retweets, ensure that it is appended only once 
+                    if tweets_parsed not in tweets: 
+                        tweets.append(tweets_parsed) 
+                else: 
+                    tweets.append(tweets_parsed) 
+  
+            # return parsed tweets 
+            return tweets         
+
+
+
+
+
+
