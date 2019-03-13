@@ -31,13 +31,14 @@ class TwitterClient(object):
         else :
             return 'negative'
 
-    def get_tweets(self, query, count = 10):
+    try:
+        def get_tweets(self, query, count = 10):
     
-        tweets = []
+            tweets = []
     # call the twitter api to fetch the tweets and parse them
-        tweets_fetched = self.api.search(query =query, count = count )
+            tweets_fetched = self.api.search(query =query, count = count )
 
-        for tweet in fetched_tweets: 
+            for tweet in fetched_tweets: 
                 # empty dictionary to store required params of a tweet 
                 tweets_parsed = {} 
   
@@ -57,7 +58,9 @@ class TwitterClient(object):
             # return parsed tweets 
             return tweets         
 
-
+	#catching the exception and shows an error when tweets not parsed
+    except tweepy.TweepError as e:
+        print('Error:' + str(e))
 
 
 
