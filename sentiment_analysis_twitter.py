@@ -64,4 +64,35 @@ class TwitterClient(object):
 
 
 
+main():
+
+api = TwitterClient()
+tweets = api.get_tweets(query = "Elon Musk", count = 400)
+
+#positive tweets from the query 
+
+positive_tweets = [tweet for tweet in tweets if tweet['sentiment'] == 'positive']
+
+print("Positive tweets percentage: {} %".format(100*len(positive_tweets)/len(tweets)))
+
+negative_tweets = [tweet for tweet in tweets if tweet['sentimen't] == negative]
+
+print("Negative tweets percentage: {} %".format(100*len(negative_tweets)/len(tweets)))
+
+
+#first 5 tweets from the query 
+print('\nPositive Tweets')
+for tweet in positive_tweets[:10]:
+    print(tweet['text'])
+
+ 
+# 5 negative tweets from the query 
+
+print('\n Negative Tweets')
+for tweet in negative_tweets[:10]:
+    print(tweet['text'])
+
+if __name__== '__main__':
+    main()
+
 
