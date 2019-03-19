@@ -67,7 +67,7 @@ class TwitterClient(object):
 main():
 
 api = TwitterClient()
-tweets = api.get_tweets(query = "Elon Muck", count = 400)
+tweets = api.get_tweets(query = "Elon Musk", count = 400)
 
 #positive tweets from the query 
 
