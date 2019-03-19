@@ -1,3 +1,7 @@
 Sentiment Analysis in Twitter to determine the nature of the Tweets.
 Step 1: Add imports from the python liraries tweepy and textblob which will be used to fetch and parse data from Twitter
+		A TwitterClient class is created to interact with the Twitter APIs and fetching and parsing the Tweets, and the inti
+		function is used to handle the authemtication of the API client. 
+
+
  
